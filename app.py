@@ -15,10 +15,10 @@ def dump_json():
 
     # Convert python dict to JSON str and save to Redis
     json_gps_coords = json.dumps(gps_coords)
-    r.set('gps_coords', json_gps_coords)
+    cache.set('gps_coords', json_gps_coords)
 
 def get_gpscoods():
-    unpacked_gps_coords = json.loads(r.get('gps_coords').decode('utf-8'))
+    unpacked_gps_coords = json.loads(cache.get('gps_coords').decode('utf-8'))
     gps_coords == unpacked_gps_coords
 
 def get_hit_count():
