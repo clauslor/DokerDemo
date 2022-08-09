@@ -20,5 +20,5 @@ def get_hit_count():
 @app.route('/')
 def hello():
     count = get_hit_count()
-    return 'Hello World! I have been seen {} times.\n'.format(count)
+    return render_template('index.html', hits=count)
 
