@@ -1,7 +1,7 @@
 import time
 
 import redis
-from flask import Flask
+from flask import Flask,redirect,url_for,render_template,request
 
 app = Flask(__name__)
 cache = redis.Redis(host='redis', port=6379)
